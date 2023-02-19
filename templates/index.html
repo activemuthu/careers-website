@@ -20,12 +20,6 @@
         text-align: center;
         font-weight:normal;
       }
-        h3{
-        font-family:Roboto;
-        font-size: 22px;
-        text-align: center;
-        font-weight:normal;
-      }
       #container{
         max-width:720px;
         margin:0 auto;
@@ -42,12 +36,29 @@
       <img id="banner" class="img-fluid" src="https://muthu-careers-website.muthuraja1234.repl.co/static/banner.jpg" alt="careerbanner" height="320px"/>
       <h2 class="mt-2 mb-4">About Company</h2>
       <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-      <h3>Open Positions</h3>
-      <p>TODO</p>
-      <div style="text-align:center;">
-       <button class="btn btn-primary btn-lg">Contact Us</button>
+      <h2>Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+        <div>
+           <div> 
+             <h4>{{job['title']}}</h4>
+             <div>
+             <b>Location: </b>{{job['location']}}
+             </div>
+             <div>
+             <b>Salary: </b>{{job['Salary']}}
+             </div>
+           </div>
+             <div>
+               <button class="btn btn-outline-primary" style="margin-left: 545px; margin-top: -113px;">Apply Now</button>
+               <hr size=3 noshade>
+            </div>
+        {% endfor %}
       </div>
-       <p class="copy mt-2 mb-4">Copyright@2023</p>
+      <div style="text-align:center;">
+       <button class="btn btn-primary btn-lg mt-2">Contact Us</button>
+      </div>
+       <p class="copy mt-4 mb-4">Copyright@2023</p>
     </div>
   </body>
 </html>
